@@ -1,3 +1,6 @@
+<?php include "inc/header.php"; ?>
+
+
 <?php 
 // create connection
 $connection = mysql_connect("localhost", "root", "root");
@@ -37,3 +40,6 @@ if (!$db_select) {
 
 <?php mysql_close($connection);
 ?>
+
+
+<?php include "inc/footer.php"; ?>
