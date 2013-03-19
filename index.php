@@ -1,5 +1,23 @@
-<?php include "inc/header.php"; ?>
+
+<?php require_once("inc/connection.php"); ?>
+<?php require_once("inc/functions.php"); ?>
+<?php include ("inc/header.php"); ?>
+
 		<section id="submit">
+<?php 
+		$results = mysql_query("SELECT * FROM submissions", $connection);
+		if (!$results) {
+			die("Databse query failed: " . mysql_error());
+		}
+
+		while ($row = mysql_fetch_array($results)) {
+			echo $row["content"]." ".$row["name"]."<br />";
+
+		}
+
+		?>
+
+
 		Submit something genuine and supportive for Ida to include in her personal Esteem Engine. She'll be sure to thank you for it when it helps her lift her chin up!
 		<div id="form">
 
@@ -11,4 +29,4 @@
 
 		</section>
 
-<?php include "inc/footer.php"; ?>
+<?php require ("inc/footer.php"); ?>
