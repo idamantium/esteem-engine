@@ -1,0 +1,14 @@
+
+@import "bits";
+
+body {
+	width: 1000px;
+	margin: 0 auto;
+	background: $bgcolor;
+	color:
+		darken($bgcolor, 30%);
+}
+
+h1 {
+	padding: $gutter/2 0;
+}
