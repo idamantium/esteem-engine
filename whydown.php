@@ -10,14 +10,20 @@
 		}
 
 		while ($trigger = mysql_fetch_array($all_triggers)) {
-			echo "<li>" . $trigger["name"]." ".$trigger["text"]."</li>";
-			
+			echo "<li>{$trigger["name"]}  {$trigger["text"]}</li>";
+			$affirmation_set = mysql_query("SELECT * FROM affirmations WHERE trigger_id = {$trigger["ID"]}", $connection);
+			if (!$affirmation_set) {
+				die("Database query failed: " . mysql_error());
+			}	
+
+			echo "<ul>";
+			while ($affirmation = mysql_fetch_array($affirmation_set)) {
+				echo "<li>{$affirmation["content"]}</li>";
+
+			}	
+			echo "</ul>";	
 
 		}
-		$trigger_link = mysql_query("SELECT * FROM affirmations WHERE trigger_id = {$trigger["id"]}", $connection);
-			if (!$trigger_link) {
-				die("Database query failed: " . mysql_error());
-			}
 
 		?>
 

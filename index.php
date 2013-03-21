@@ -33,7 +33,7 @@
 		<ul>
 
 		<li><a href="whydown.php"> Pick why you're feeling down </a></li>
-		<li><a href="affirmations.php"> An Affirmation </a></li>
+		<li><a href="affirmation.php"> An Affirmation </a></li>
 		<li><a href="feelingbetter.php"> How was that? </a></li>
 
 		</ul>
