@@ -1,20 +1,43 @@
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
+
+<?php 
+	if(isset($_GET['trg'])) {
+		$sel_trg = $_GET['trg'];
+
+	} else {
+
+		$sel_trg = "";
+	}
+
+
+
+?>
+
 <?php include ("inc/header.php"); ?>
+
 
 <ul>
 		<?php 
-		$all_triggers = mysql_query("SELECT * FROM triggers", $connection);
-		if (!$all_triggers) {
-			die("Databse query failed: " . mysql_error());
-		}
+
+		$query = "SELECT * 
+				  FROM triggers";
+
+		$all_triggers = mysql_query($query, $connection);
+		confirm_query ($all_triggers);
+
 
 		while ($trigger = mysql_fetch_array($all_triggers)) {
-			echo "<li>{$trigger["name"]}  {$trigger["text"]}</li>";
-			$affirmation_set = mysql_query("SELECT * FROM affirmations WHERE trigger_id = {$trigger["ID"]}", $connection);
-			if (!$affirmation_set) {
-				die("Database query failed: " . mysql_error());
-			}	
+			echo "<li><a href=\"whydown.php?trg=" . urlencode($trigger["ID"]) . "\">
+				{$trigger["name"]} </a> {$trigger["text"]}</li>";
+			$query = "SELECT * 
+					  FROM affirmations 
+					  WHERE trigger_id = {$trigger["ID"]}";
+
+			$affirmation_set = mysql_query($query, $connection);
+			confirm_query ($affirmation_set);
+
+
 
 			echo "<ul>";
 			while ($affirmation = mysql_fetch_array($affirmation_set)) {
@@ -27,7 +50,21 @@
 
 		?>
 
-	</ul>
+</ul>
+<div>
+<?php echo $sel_trg; ?><br />
+<?php
+	if ($sel_trg != "") {
+	$query = "SELECT * FROM affirmations WHERE trigger_id = {$sel_trg} LIMIT 1";
+	$result_set = mysql_query($query, $connection);
+	confirm_query($result_set);
+	$trigger = mysql_fetch_array($result_set);
+	echo $trigger['content'];
+}
+	?>
+<?php  ?>
+</div>
+
 
 
 <?php require ("inc/footer.php"); ?>
