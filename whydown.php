@@ -28,7 +28,7 @@
 
 
 		while ($trigger = mysql_fetch_array($all_triggers)) {
-			echo "<li><a href=\"whydown.php?trg=" . urlencode($trigger["ID"]) . "\">
+			echo "<li><a href=\"affirmation.php?trg=" . urlencode($trigger["ID"]) . "\">
 				{$trigger["name"]} </a> {$trigger["text"]}</li>";
 			$query = "SELECT * 
 					  FROM affirmations 
