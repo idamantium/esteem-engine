@@ -17,7 +17,7 @@
 <?php include ("inc/header.php"); ?>
 
 
-<?php echo $sel_trg; ?><br />
+<?php //echo $sel_trg; ?><br />
 <?php
 	if ($sel_trg != "") {
 	$query = "SELECT * FROM affirmations WHERE trigger_id = {$sel_trg}";
@@ -25,7 +25,7 @@
 	confirm_query($result_set);
 	$trigger = mysql_fetch_array($result_set);
 
-	echo $trigger['content'];
+	echo "{$trigger['content']}<br />{$trigger['source']}";
 
 
 	// $rand_trg = array_rand($trigger);

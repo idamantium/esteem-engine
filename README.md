@@ -5,6 +5,6 @@ Ida's Esteem Engine
 
 This little application serves up personal affirmations and lost memories of victory. It's handy for when I've forgotten what I'm worth.
 
-The original version of this project was made for my partner. He missed me terribly during a few months of long distance, so I made something to remind him over and over again that I love him. 
+The original version of this project was made for my partner. He missed me terribly during a few months of long distance, so I made something to remind him that I love him. It feels great to make a version for myself. 
 
-It feels great to make a version for myself. The Esteem Engine is part of my application to [Hacker School](https://www.hackerschool.com/). Wish me luck!
+The Esteem Engine is part of my application to [Hacker School](https://www.hackerschool.com/). Wish me luck!
