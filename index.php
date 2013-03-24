@@ -4,38 +4,37 @@
 <?php include ("inc/header.php"); ?>
 
 		<section id="submit">
-<?php 
-		//$results = mysql_query("SELECT * FROM submissions", $connection);
-		//if (!$results) {
-		//	die("Databse query failed: " . mysql_error());
-		//}
-		//
-		//while ($row = mysql_fetch_array($results)) {
-		//	echo $row["content"]." ".$row["name"]."<br />";
-		//
-		//}
-
-		?>
 
 
 		Submit something genuine and supportive for Ida to include in her personal Esteem Engine. She'll be sure to thank you for it when it helps her lift her chin up!
 
 		<div id="form">
-			<form action="thankyou.php" method="post">
+			<form action="submit_affirmation.php" method="post">
 				<p>Affirmation: 
 					<input type="text" name="affirmation" value="" id="affirmation" />
 				</p>
 
 				<p>Trigger:
 
-			<!--  THIS PART SHOULD BE A MySQL QUERY -->
-
 					<select name="trigger">
-						<option value="Feeling Invisible">Feeling Invisible</option>
-						<option value="Not Good Enough">Not Good Enough</option>
-						<option value="No One REspects Me">No One Respects Me</option>
-						<option value="Everyone's Working Against Me">Working Against Me</options>
-						<option value="Other / Not Sure">Other / Not Sure</options>
+								<?php 
+
+								$query = "SELECT * 
+										  FROM triggers";
+						
+								$all_triggers = mysql_query($query, $connection);
+								confirm_query ($all_triggers);
+						
+						
+								while ($trigger = mysql_fetch_array($all_triggers)) {
+									echo "<option value=\"{$trigger["name"]}\">{$trigger["name"]}</option>";
+									
+						
+								}
+						
+								?>
+								
+						<option value="Other / Not Sure">Other / Not Sure</options> 
 					</select>
 
 				<p> My Name Is: <input type="text" name="sub_name" value="" id="sub_name" /></p>
