@@ -3,6 +3,6 @@
 <?php require_once("inc/functions.php"); ?>
 <?php include ("inc/header.php"); ?>
 
-testing...
+testing... this is the confirmation page for the affirmation submission
 
 <?php require ("inc/footer.php"); ?>

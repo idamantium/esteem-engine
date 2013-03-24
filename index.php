@@ -4,14 +4,12 @@
 <?php include ("inc/header.php"); ?>
 
 		<section id="submit">
-
-
-		Submit something genuine and supportive for Ida to include in her personal Esteem Engine. She'll be sure to thank you for it when it helps her lift her chin up!
+			<hr></hr>
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
-				<p>Affirmation: 
-					<input type="text" name="affirmation" value="" id="affirmation" />
+				<p>Submit An Affirmation For Ida's Esteem Engine: <br />
+					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
 
 				<p>Trigger:
@@ -33,13 +31,14 @@
 								}
 						
 								?>
-								
+
 						<option value="Other / Not Sure">Other / Not Sure</options> 
 					</select>
 
 				<p> My Name Is: <input type="text" name="sub_name" value="" id="sub_name" /></p>
-				<p> You can send me a thank you note at this email address: <input type="text" name="email" value="" id="email" />
-				<p><input type="submit" value="Send Affirmation" /></p>
+				<p> You can send me a thank you note at this email address: <input type="email" name="email" value="" id="email" />
+				<p><input type="submit" value="Submit Affirmation" /></p>
+			</form>
 
 		</div>
 
@@ -47,10 +46,17 @@
 		</section>
 
 		<section id="login">
-		Have we met?
+			<hr></hr>
+			Have we met? This is where the login goes.
+			<form action="login.php" method="post">
+				<p> Username: <input type="text" name="username" value="" id="username" /></p>
+				<p> Password: <input type="password" name="password" value="" id="password" /></p>
+				<p><input type="submit" name="login" value="Onward!" /></p>
+			</form>
+
 
 		</section>
-
+		<hr></hr>
 		<h3> For Testing </h3>
 		<ul>
 

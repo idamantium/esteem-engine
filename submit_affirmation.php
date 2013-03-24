@@ -2,15 +2,15 @@
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
 <?php 
-	$affirmation = $_POST['affirmation'];
-	$trigger = $_POST['trigger'];
-	$sub_name = $_POST['sub_name'];
-	$email = $_POST['email'];
+	$affirmation = mysql_real_escape_string($_POST['affirmation']);
+	$trigger =  mysql_real_escape_string($_POST['trigger']);
+	$sub_name =  mysql_real_escape_string($_POST['sub_name']);
+	$email =  mysql_real_escape_string($_POST['email']);
 
-	echo "<p>These are the variables: {$affirmation}  {$trigger}  </p>";
+	
 
 ?>
-<?php
+<?php 
 	$query = "INSERT INTO submissions (
 				content, `trigger`, name, contact
 			) VALUES (

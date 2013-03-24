@@ -6,6 +6,14 @@ function confirm_query($result) {
 			}	
 }
 
+function redirect_to( $location = NULL) {
+	if ($location != NULL) {
+		header("Location: {$location}");
+		exit;
+	}
+
+}
+
 
 function get_trigger_by_id($trigger_id) {
 	global $connection;
