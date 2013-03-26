@@ -20,12 +20,13 @@
 <?php //echo $sel_trg; ?><br />
 <?php
 	if ($sel_trg != "") {
-	$query = "SELECT * FROM affirmations WHERE trigger_id = {$sel_trg}";
+	$query = "SELECT * FROM affirmations WHERE trigger_id = {$sel_trg} ORDER BY RAND()";
 	$result_set = mysql_query($query, $connection);
 	confirm_query($result_set);
-	$trigger = mysql_fetch_array($result_set);
 
-	echo "{$trigger['content']}<br />{$trigger['source']}";
+	$trigger = mysql_fetch_array($result_set);
+	echo $trigger['content'] . "<br />" . $trigger['source'];
+
 
 
 	// $rand_trg = array_rand($trigger);
