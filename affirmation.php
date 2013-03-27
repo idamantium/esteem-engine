@@ -26,7 +26,9 @@
 
 	$trigger = mysql_fetch_array($result_set);
 	echo $trigger['content'] . "<br />" . $trigger['source'];
-
+	if($trigger['contact'] != NULL) {
+		echo "<a href=\"mailto:" . $trigger['contact'] . "<p>Email " . $trigger['source'] . "to thank them for the awesome affrimation.</a>"; 
+	}
 
 
 	// $rand_trg = array_rand($trigger);

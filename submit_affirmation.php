@@ -1,6 +1,23 @@
 
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
+
+<?php 
+	$errors = array();
+	if (!isset($_POST['affirmation']) || empty($_POST['affirmation'])) {
+		$errors[] = 'affirmation';
+	}
+	
+	if (!isset($_POST['sub_name']) || empty($_POST['sub_name'])) {
+		$errors[] = 'sub_name';
+	}
+	if (!empty($errors)) {
+		header("Location: index.php");
+		exit;
+	}
+
+?>
+
 <?php 
 	$affirmation = mysql_real_escape_string($_POST['affirmation']);
 	$trigger =  mysql_real_escape_string($_POST['trigger']);

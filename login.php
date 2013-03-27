@@ -3,20 +3,22 @@
 
 <?php 
 
-//Form Validation for Affirmation Submission
-	$aff_errors = array();
-	if (!isset($_POST['affirmation']) || empty($_POST['affirmation'])) {
-		$aff_errors[] = 'affirmation';
-	}
 
-	if (!empty($aff_errors)) {
-		header("Location: whydown.php");
+	$errors = array();
+	if (!isset($_POST['username']) || empty($_POST['username'])) {
+		$errors[] = 'username';
+	}
+	
+	if (!isset($_POST['password']) || empty($_POST['password'])) {
+		$errors[] = 'password';
+	}
+	if (!empty($errors)) {
+		header("Location: index.php");
 		exit;
-
 	}
-
 
 ?>
+
 
 
 

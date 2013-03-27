@@ -36,7 +36,7 @@
 					</select>
 
 				<p> My Name Is: <input type="text" name="sub_name" value="" id="sub_name" /></p>
-				<p> You can send me a thank you note at this email address: <input type="email" name="email" value="" id="email" />
+				<p> You can send me a thank you note at this email address (optional): <br /><input type="email" name="email" value="" id="email" />
 				<p><input type="submit" value="Submit Affirmation" /></p>
 			</form>
 
