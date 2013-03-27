@@ -46,10 +46,54 @@
 
 		</section>
 
+
+<?php
+if (isset($_POST['login'])) {
+	$errors = array();
+	if (!isset($_POST['username']) || empty($_POST['username'])) {
+		$errors[] = 'username';
+	}
+	
+	if (!isset($_POST['password']) || empty($_POST['password'])) {
+		$errors[] = 'password';
+	}
+
+	$username = mysql_real_escape_string($_POST['username']);
+	$password =  mysql_real_escape_string($_POST['password']);
+	$hashed_password = sha1($password);
+
+
+	if (empty($errors)) {
+		$query = "SELECT * FROM users WHERE username = '{$username}' AND hashed_password = '{$hashed_password}'";
+		$result_set = mysql_query($query);
+		confirm_query($result_set);
+		if (mysql_num_rows($result_set) == 1) {
+			$found_user = mysql_fetch_array($result_set);
+			header("Location: whydown.php");
+			exit;
+		} else {
+			$message = "The username and password combination was not found.";
+
+		}
+
+	} else {
+		$message = "The username and password combination was not found.";
+
+	}
+
+
+} else {
+$username = "";
+$password = "";
+}
+
+?>
+
 		<section id="login">
 			<hr></hr>
 			Have we met? This is where the login goes.
-			<form action="login.php" method="post">
+			<?php if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>
+			<form action="index.php" method="post">
 				<p> Username: <input type="text" name="username" value="" id="username" /></p>
 				<p> Password: <input type="password" name="password" value="" id="password" /></p>
 				<p><input type="submit" name="login" value="Onward!" /></p>
