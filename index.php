@@ -8,6 +8,7 @@
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
+				<?php// echo sha1('1first3snow9'); ?>
 				<p>Submit An Affirmation For Ida's Esteem Engine: <br />
 					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
@@ -36,7 +37,7 @@
 					</select>
 
 				<p> My Name Is: <input type="text" name="sub_name" value="" id="sub_name" /></p>
-				<p> You can send me a thank you note at this email address (optional): <br /><input type="email" name="email" value="" id="email" />
+				<p> Add your email address so I can send you a thank you note (optional): <br /><input type="email" name="email" value="" id="email" />
 				<p><input type="submit" value="Submit Affirmation" /></p>
 			</form>
 
