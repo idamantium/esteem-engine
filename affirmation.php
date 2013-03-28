@@ -21,8 +21,8 @@
 
 <?php include ("inc/header.php"); ?>
 
-
-<?php //echo $sel_trg; ?><br />
+<section id="quote">
+<?php //echo $sel_trg; ?>
 <?php
 	if ($sel_trg != "") {
 	$query = "SELECT * FROM affirmations WHERE trigger_id = {$sel_trg} ORDER BY RAND()";
@@ -41,9 +41,9 @@
 }
 	?>
 <?php  ?>
+</section>
 
-
-<p><a href="index.php">Home</a> | <a href="whydown.php">Read More</a> | <a href="logout.php">Logout</a></p>
+<p class="nav"><a href="index.php">Home</a> | <a href="whydown.php">Read More</a> | <a href="logout.php">Logout</a></p>
 
 <?php require ("inc/footer.php"); ?>
 <?php ob_end_flush(); ?>

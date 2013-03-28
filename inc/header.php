@@ -8,5 +8,6 @@
 
 	</head>
 	<body>
+		<div id="wrapper">
 		<h1>Ida's Esteem Engine</h1>
 		

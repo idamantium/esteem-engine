@@ -56,7 +56,7 @@
 <?php  ?>
 </div>
 
-<p><a href="logout.php">Logout</a></p>
+<p class="nav"><a href="index.php">Home</a> | <a href="logout.php">Logout</a></p>
 
 
 <?php require ("inc/footer.php"); ?>

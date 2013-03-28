@@ -7,8 +7,8 @@
 "You forget your victories, but you remember the losses."<br />
 This little application serves up personal affirmations and lost memories of victory. It's handy for when I've forgotten what I'm worth.
 </p>
-		<section id="submit">
-			<hr></hr>
+		<section id="submit-aff">
+			
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
@@ -18,7 +18,6 @@ This little application serves up personal affirmations and lost memories of vic
 					- A personal enecdote about working together <br />
 					- A loving piece of advice <br />
 					- A description of something I might not know I'm awesome at<br />
-					- A humerous description of something I suck is of no real consequence<br />
 					  (The more specific you can be, the better.)
 					<br /><textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
@@ -58,7 +57,7 @@ This little application serves up personal affirmations and lost memories of vic
 						?>
 			</form>
 
-		</div>
+		</section>
 
 
 		</section>
@@ -114,7 +113,7 @@ $password = "";
 ?>
 
 		<section id="login">
-			<hr></hr>
+			
 			Have we met?
 			<?php if (!isset($_SESSION['user_id'])) {
 				?>
@@ -127,7 +126,7 @@ $password = "";
 			<?php
 				} else {
 			?>
-			Yes, go get an <a href="whydown.php">affiramtion</a> or <a href="logout.php">logout</a></p>.
+			Yes, go get an <a href="whydown.php">affiramtion</a> or <a href="logout.php">logout.</a></p>
 			<?php
 			}
 			?>
@@ -135,7 +134,7 @@ $password = "";
 
 
 		</section>
-		<hr></hr>
+		
 <!--		<h3> For Testing </h3>
 		<ul>
 
