@@ -29,9 +29,9 @@
 	confirm_query($result_set);
 
 	$trigger = mysql_fetch_array($result_set);
-	echo $trigger['content'] . "<br />" . $trigger['source'];
+	echo $trigger['content'] . "<br /> ~ " . $trigger['source'];
 	if($trigger['contact'] != NULL) {
-		echo "<a href=\"mailto:" . $trigger['contact'] . "\"><p>Email " . $trigger['source'] . "to thank them for the awesome affrimation.</p></a>"; 
+		echo "<p>Email <a href=\"mailto:" . $trigger['contact'] . "\">a thank you note to " . $trigger['source'] . "</a> for the awesome affrimation.</p>"; 
 	}
 
 
@@ -42,6 +42,6 @@
 <?php  ?>
 
 
-<p><a href="logout.php">Logout</a></p>
+<p><a href="index.php">Home</a> | <a href="whydown.php">Read More</a> | <a href="logout.php">Logout</a></p>
 
 <?php require ("inc/footer.php"); ?>

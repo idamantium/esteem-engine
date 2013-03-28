@@ -21,7 +21,7 @@
 ?>
 
 <?php include ("inc/header.php"); ?>
-
+<h3>What kind of down are you feeling?</h3>
 
 <ul>
 		<?php 
@@ -32,26 +32,10 @@
 		$all_triggers = mysql_query($query, $connection);
 		confirm_query ($all_triggers);
 
-
 		while ($trigger = mysql_fetch_array($all_triggers)) {
 			echo "<li><a href=\"affirmation.php?trg=" . urlencode($trigger["ID"]) . "\">
-				{$trigger["name"]} </a> {$trigger["text"]}</li>";
-			$query = "SELECT * 
-					  FROM affirmations 
-					  WHERE trigger_id = {$trigger["ID"]}";
-
-			$affirmation_set = mysql_query($query, $connection);
-			confirm_query ($affirmation_set);
-
-
-
-			echo "<ul>";
-			while ($affirmation = mysql_fetch_array($affirmation_set)) {
-				echo "<li>{$affirmation["content"]}</li>";
-
-			}	
-			echo "</ul>";	
-
+				{$trigger["name"]} </a><br /> {$trigger["text"]}</li>";
+			
 		}
 
 		?>

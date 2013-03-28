@@ -14,9 +14,10 @@
 					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
 
-				<p>Trigger:
+				<p>What terrible myth does this affirmation prove wrong?
 
 					<select name="trigger">
+						<option value="Other / Not Sure">Not Sure / Other</options> 
 								<?php 
 
 								$query = "SELECT * 
@@ -34,12 +35,18 @@
 						
 								?>
 
-						<option value="Other / Not Sure">Other / Not Sure</options> 
+						
 					</select>
 
-				<p> My Name Is: <input type="text" name="sub_name" value="" id="sub_name" /></p>
+				<p> My name is (optional): <input type="text" name="sub_name" value="" id="sub_name" /></p>
 				<p> Add your email address so I can send you a thank you note (optional): <br /><input type="email" name="email" value="" id="email" />
 				<p><input type="submit" value="Submit Affirmation" /></p>
+				<?php if(isset($_GET['aff'])) {
+					if ($_GET['aff'] == 1) {
+						echo "<p class=\"message\">Please include an affirmation. Everything else is optional.</p>";
+					}
+				}
+						?>
 			</form>
 
 		</div>
@@ -99,8 +106,8 @@ $password = "";
 
 		<section id="login">
 			<hr></hr>
-			Have we met? This is where the login goes.
-			<?php if (!empty($message)) {echo "<p>" . $message . "</p>";} ?>
+			Have we met?
+			<?php if (!empty($message)) {echo "<p class=\"message\">" . $message . "</p>";} ?>
 			<form action="index.php" method="post">
 				<p> Username: <input type="text" name="username" value="" id="username" /></p>
 				<p> Password: <input type="password" name="password" value="" id="password" /></p>
@@ -110,13 +117,14 @@ $password = "";
 
 		</section>
 		<hr></hr>
-		<h3> For Testing </h3>
+<!--		<h3> For Testing </h3>
 		<ul>
 
 		<li><a href="whydown.php"> Pick why you're feeling down </a></li>
 		<li><a href="affirmation.php"> An Affirmation </a></li>
 		<li><a href="feelingbetter.php"> How was that? </a></li>
 
-		</ul>
+		</ul> 
+-->
 
 <?php require ("inc/footer.php"); ?>
