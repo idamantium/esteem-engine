@@ -4,17 +4,27 @@
 <?php require_once("inc/functions.php"); ?>
 
 <?php include ("inc/header.php"); ?>
+<p>
 
+This little application serves up personal affirmations and lost memories of victory. It's handy for when I've forgotten what I'm worth.
+</p>
 		<section id="submit">
 			<hr></hr>
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
-				<p>Submit An Affirmation For Ida's Esteem Engine: <br />
-					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
+				<h3>Contribute an affirmation to Ida's Esteem Engine </h3>
+				<p>I'd love your help in defeating the monsters of self-doubt.  <br />
+					<br />Examples of things to contribute:<br />
+					- A personal enecdote about working together <br />
+					- A loving piece of advice <br />
+					- A description of something I might not know I'm awesome at<br />
+					- A humerous description of something I suck is of no real consequence<br />
+					  (The more specific you can be, the better.)
+					<br /><textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
 
-				<p>What terrible myth does this affirmation prove wrong?
+				<p>What ugly myth does this affirmation put to rest?<br />
 
 					<select name="trigger">
 						<option value="Other / Not Sure">Not Sure / Other</options> 
@@ -38,8 +48,8 @@
 						
 					</select>
 
-				<p> My name is (optional): <input type="text" name="sub_name" value="" id="sub_name" /></p>
-				<p> Add your email address so I can send you a thank you note (optional): <br /><input type="email" name="email" value="" id="email" />
+				<p> Your Name (optional) <br /><input type="text" name="sub_name" value="" id="sub_name" /></p>
+				<p> Your email address for a personal thank you note (optional) <br /><input type="email" name="email" value="" id="email" /> <br /></p>
 				<p><input type="submit" value="Submit Affirmation" /></p>
 				<?php if(isset($_GET['aff'])) {
 					if ($_GET['aff'] == 1) {
@@ -113,12 +123,12 @@ $password = "";
 			<form action="index.php" method="post">
 				<p> Username: <input type="text" name="username" value="" id="username" /></p>
 				<p> Password: <input type="password" name="password" value="" id="password" /></p>
-				<p><input type="submit" name="login" value="Onward!" /></p>
+				<p><input type="submit" name="login" value="Let me in!" /></p>
 			</form>
 			<?php
 				} else {
 			?>
-			Yes, go get an <a href="whydown.php">affiramtion</a> |or <a href="logout.php">logout</a></p>.
+			Yes, go get an <a href="whydown.php">affiramtion</a> or <a href="logout.php">logout</a></p>.
 			<?php
 			}
 			?>
