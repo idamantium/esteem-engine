@@ -13,7 +13,7 @@ This little application serves up personal affirmations and lost memories of vic
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
 				<h3>Contribute an affirmation to Ida's Esteem Engine </h3>
-				<p>I'd love your help in defeating the monsters of self-doubt.  <br />
+				<p>Help me defeat the monsters of self-doubt.  <br />
 					<br />Examples of things to contribute:<br />
 					- A personal anecdote about working together <br />
 					- A loving piece of advice <br />
