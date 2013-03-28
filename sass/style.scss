@@ -5,10 +5,15 @@ body {
 	width: 80%;
 	margin: 0 auto;
 	background: $bgcolor;
-	color:
-		darken($bgcolor, 30%);
+	color: darken($bgcolor, 30%);
+
 }
 
 h1 {
 	padding: $gutter/2 0;
+}
+
+
+.message {
+	color: adjust_hue(saturate(darken($bgcolor, 48), 78), 72);
 }

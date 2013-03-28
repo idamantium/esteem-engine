@@ -6,13 +6,10 @@
 	$errors = array();
 	if (!isset($_POST['affirmation']) || empty($_POST['affirmation'])) {
 		$errors[] = 'affirmation';
-	}
 	
-	if (!isset($_POST['sub_name']) || empty($_POST['sub_name'])) {
-		$errors[] = 'sub_name';
 	}
 	if (!empty($errors)) {
-		header("Location: index.php");
+		header("Location: index.php?aff=1");
 		exit;
 	}
 

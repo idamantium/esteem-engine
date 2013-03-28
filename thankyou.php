@@ -3,6 +3,7 @@
 <?php require_once("inc/functions.php"); ?>
 <?php include ("inc/header.php"); ?>
 
-testing... this is the confirmation page for the affirmation submission
+<p>Thanks so much for participating! </p>
 
+<a href="index.php">Return Home</a>
 <?php require ("inc/footer.php"); ?>
