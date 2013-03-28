@@ -10,7 +10,6 @@
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
-				<?php //echo sha1('school'); ?>
 				<p>Submit An Affirmation For Ida's Esteem Engine: <br />
 					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
