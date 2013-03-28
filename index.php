@@ -107,12 +107,22 @@ $password = "";
 		<section id="login">
 			<hr></hr>
 			Have we met?
+			<?php if (!isset($_SESSION['user_id'])) {
+				?>
 			<?php if (!empty($message)) {echo "<p class=\"message\">" . $message . "</p>";} ?>
 			<form action="index.php" method="post">
 				<p> Username: <input type="text" name="username" value="" id="username" /></p>
 				<p> Password: <input type="password" name="password" value="" id="password" /></p>
 				<p><input type="submit" name="login" value="Onward!" /></p>
 			</form>
+			<?php
+				} else {
+			?>
+			Yes, go get an <a href="whydown.php">affiramtion</a> |or <a href="logout.php">logout</a></p>.
+			<?php
+			}
+			?>
+			
 
 
 		</section>
@@ -125,6 +135,6 @@ $password = "";
 		<li><a href="feelingbetter.php"> How was that? </a></li>
 
 		</ul> 
--->
+
 
 <?php require ("inc/footer.php"); ?>
