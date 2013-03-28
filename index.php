@@ -1,6 +1,8 @@
 
+<?php require_once("inc/session.php"); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
+
 <?php include ("inc/header.php"); ?>
 
 		<section id="submit">
@@ -8,7 +10,7 @@
 
 		<div id="form">
 			<form action="submit_affirmation.php" method="post">
-				<?php// echo sha1('1first3snow9'); ?>
+				<?php //echo sha1('school'); ?>
 				<p>Submit An Affirmation For Ida's Esteem Engine: <br />
 					<textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
 				</p>
@@ -64,11 +66,15 @@ if (isset($_POST['login'])) {
 
 
 	if (empty($errors)) {
-		$query = "SELECT * FROM users WHERE username = '{$username}' AND hashed_password = '{$hashed_password}'";
+		$query = "SELECT username, id FROM users WHERE username = '{$username}' AND hashed_password = '{$hashed_password}'";
 		$result_set = mysql_query($query);
 		confirm_query($result_set);
 		if (mysql_num_rows($result_set) == 1) {
 			$found_user = mysql_fetch_array($result_set);
+			$_SESSION['user_id'] = $found_user['id'];
+			$_SESSION['username'] = $found_user['username'];
+
+
 			header("Location: whydown.php");
 			exit;
 		} else {
@@ -83,6 +89,9 @@ if (isset($_POST['login'])) {
 
 
 } else {
+	if(isset($_GET['logout']) && $_GET['logout'] == 1) {
+		$message = "You are now logged out.";
+	}
 $username = "";
 $password = "";
 }

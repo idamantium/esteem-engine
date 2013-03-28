@@ -1,5 +1,11 @@
+<?php require_once("inc/session.php"); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
+<?php if (!isset($_SESSION['user_id'])) {
+	header("Location: index.php");
+		exit;
+}
+?>
 
 <?php 
 	if(isset($_GET['trg'])) {
@@ -9,8 +15,6 @@
 
 		$sel_trg = "";
 	}
-
-
 
 ?>
 
@@ -27,7 +31,7 @@
 	$trigger = mysql_fetch_array($result_set);
 	echo $trigger['content'] . "<br />" . $trigger['source'];
 	if($trigger['contact'] != NULL) {
-		echo "<a href=\"mailto:" . $trigger['contact'] . "<p>Email " . $trigger['source'] . "to thank them for the awesome affrimation.</a>"; 
+		echo "<a href=\"mailto:" . $trigger['contact'] . "\"><p>Email " . $trigger['source'] . "to thank them for the awesome affrimation.</p></a>"; 
 	}
 
 
@@ -38,7 +42,6 @@
 <?php  ?>
 
 
-
-
+<p><a href="logout.php">Logout</a></p>
 
 <?php require ("inc/footer.php"); ?>
