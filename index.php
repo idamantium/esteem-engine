@@ -15,11 +15,11 @@ This little application serves up personal affirmations and lost memories of vic
 				<h3>Contribute an affirmation to Ida's Esteem Engine </h3>
 				<p>I'd love your help in defeating the monsters of self-doubt.  <br />
 					<br />Examples of things to contribute:<br />
-					- A personal enecdote about working together <br />
+					- A personal anecdote about working together <br />
 					- A loving piece of advice <br />
 					- A description of something I might not know I'm awesome at<br />
 					  (The more specific you can be, the better.)
-					<br /><textarea name="affirmation" rows="10" cols="50"value="" id="affirmation" /></textarea>
+					<br /><textarea name="affirmation" rows="10" value="" id="affirmation" /></textarea>
 				</p>
 
 				<p>What ugly myth does this affirmation put to rest?<br />
