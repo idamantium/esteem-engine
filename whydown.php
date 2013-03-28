@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php require_once("inc/session.php"); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
@@ -59,3 +60,4 @@
 
 
 <?php require ("inc/footer.php"); ?>
+<?php ob_end_flush(); ?>

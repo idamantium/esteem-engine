@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php require_once("inc/session.php"); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
@@ -45,3 +46,4 @@
 <p><a href="index.php">Home</a> | <a href="whydown.php">Read More</a> | <a href="logout.php">Logout</a></p>
 
 <?php require ("inc/footer.php"); ?>
+<?php ob_end_flush(); ?>

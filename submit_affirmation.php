@@ -1,7 +1,6 @@
-
+<?php ob_start(); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
-
 <?php 
 	$errors = array();
 	if (!isset($_POST['affirmation']) || empty($_POST['affirmation'])) {
@@ -45,3 +44,4 @@
 
 
 <?php mysql_close($connection); ?>
+<?php ob_end_flush(); ?>

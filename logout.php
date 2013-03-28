@@ -1,3 +1,4 @@
+<?php ob_start(); ?>
 <?php require_once("inc/functions.php"); ?>
 
 <?php
@@ -16,3 +17,5 @@
 	exit;
 ?>
 
+
+<?php ob_end_flush(); ?>

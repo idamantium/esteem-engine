@@ -1,11 +1,10 @@
-
+<?php ob_start(); ?>
 <?php require_once("inc/session.php"); ?>
 <?php require_once("inc/connection.php"); ?>
 <?php require_once("inc/functions.php"); ?>
-
 <?php include ("inc/header.php"); ?>
 <p>
-
+"You forget your victories, but you remember the losses."<br />
 This little application serves up personal affirmations and lost memories of victory. It's handy for when I've forgotten what I'm worth.
 </p>
 		<section id="submit">
@@ -148,3 +147,4 @@ $password = "";
 
 
 <?php require ("inc/footer.php"); ?>
+<?php ob_end_flush(); ?>

@@ -9,4 +9,4 @@
 	</head>
 	<body>
 		<h1>Ida's Esteem Engine</h1>
-		"You forget your victories, but you remember the losses."
+		

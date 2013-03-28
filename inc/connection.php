@@ -1,8 +1,5 @@
-
-<?php
-
-require("constants.php");
-// create connection
+<?php ob_start(); ?>
+<?php require("constants.php");
 $connection = mysql_connect(DB_SERVER, DB_USER, DB_PASS);
 if (!$connection) {
 	die("Database connection failed: " . mysql_error());
@@ -15,3 +12,4 @@ if (!$db_select) {
 	die("Databse selection failed: " . mysql_error());
 }
 ?>
+<?php ob_end_flush(); ?>
