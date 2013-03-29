@@ -20,7 +20,11 @@
 					<ul><li> A personal anecdote about working together </li> 
 					<li> A loving piece of advice </li> 
 					<li> A description of something I might not know I'm awesome at</li>
+<<<<<<< HEAD
 					<li> A quote or piece or research about how feeling like shit about yourself is utterly human and universal</li> </ul>
+=======
+					<li> A quote or piece or research about how feeling like shit about yourself is uttery human and universal</li> </ul>
+>>>>>>> 403f7af6336c6896ab9ef685932c3305239611b9
 					  (The more specific you can be, the better.)
 					<br /><textarea name="affirmation" rows="10" value="" id="affirmation" /></textarea>
 				</p>
